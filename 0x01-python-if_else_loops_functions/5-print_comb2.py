@@ -2,4 +2,4 @@
 for number in range(0, 99):
     print("{:02}".format(number), end=", ")
 
-print("{:02}".format(number+1));
+print("{:02}".format(number+1))
