@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+import hidden_4
 
-from sys import argv
-
-res, i = 0, 1
+i = 0
 
 if __name__ == '__main__':
-    while i < len(argv):
-        res += int(argv[i])
-        i += 1
-    print(res)
+    l = dir(hidden_4)
+    thelist = sorted(l)
+    while i < len(thelist):
+        if thelist[i][0] != '_':
+            print(thelist[i])
+    i += 1
