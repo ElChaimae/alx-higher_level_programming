@@ -6,7 +6,7 @@ def print_matrix_integer(matrix=[[]]):
                 max = len(row) - 1
                 if i == max:
                     print("{:d}".format(element), end='$\n')
-            else:
-                print('{:d} '.format(element), end='')
+                else:
+                    print('{:d} '.format(element), end='')
         print('--$')
         print('$')
