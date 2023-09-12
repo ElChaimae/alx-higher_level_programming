@@ -1,25 +1,20 @@
 #!/usr/bin/python3
-"""Module 9-add_item.
-Adds all arguments to a Python list,
-and then save them to a file.
-"""
+"""Defines a Pascal triangle function"""
 
-import sys
-import json
-import os.path
 
-save_to_json_file = __import__("7-save_to_json_file").save_to_json_file
-load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
-
-my_file = 'add_item.json'
-
-my_list = []
-
-if os.path.exists(my_file) and os.path.getsize(my_file) > 0:
-    my_list = load_from_json_file(my_file)
-
-if len(sys.argv) > 1:
-    for elem in sys.argv[1:]:
-        my_list.append(elem)
-
-save_to_json_file(my_list, my_file)
+def pascal_triangle(n):
+    """This represents Pascal Triangle n.
+    Returns an empty list if n <= 0
+    """
+    lst = []
+    if n <= 0:
+        return lst
+    for x in range(n):
+        for y in range(x + 1):
+            if y == 0:
+                lst.append([1])
+        elif y == x:
+            lst[x].append(1)
+        else:
+            lst[x].append(lst[x - 1][y] + lst[x - 1][y - 1])
+    return lst
