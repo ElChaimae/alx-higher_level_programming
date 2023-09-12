@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-"""Defines a Pascal triangle function"""
+"""Adds all arguments to a Python list, and save them to a file"""
+import sys
+import json
 
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-def pascal_triangle(n):
-    """This represents Pascal Triangle n.
-    Returns an empty list if n <= 0
-    """
-    lst = []
-    if n <= 0:
-        return lst
-    for x in range(n):
-        for y in range(x + 1):
-            if y == 0:
-                lst.append([1])
-        elif y == x:
-            lst[x].append(1)
-        else:
-            lst[x].append(lst[x - 1][y] + lst[x - 1][y - 1])
-    return lst
+if __name__ == "__main__":
+    try:
+        json_list = load_from_json_file('add_item.json')
+    except FileNotFoundError:
+        json_list = []
+
+    for x in range(1, len(sys.argv)):
+        json_list.append(sys.argv[x])
+    save_to_json_file(json_list, "add_item.json")
