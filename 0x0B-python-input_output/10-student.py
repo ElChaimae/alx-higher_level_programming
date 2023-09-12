@@ -1,12 +1,39 @@
 #!/usr/bin/python3
-"""
-Read file
+"""Module 12-student.
+Creates a Student class.
 """
 
 
-def read_file(filename=""):
+class Student:
+    """Class that defines a student.
+    Public attributes:
+        - first_name
+        - last_name
+        - age
+    Public method to_json().
     """
-    Reads a text file and prints it to stdout
-    """
-    with open(filename) as file:
-        print(file.read(), end="")
+
+    def __init__(self, first_name, last_name, age):
+        """Initializes the Student instance."""
+
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self, attrs=None):
+        """Retrieves a dictionary representation
+        of a Student instance.
+
+        Args:
+            - attrs: list of attributes
+
+        Returns: the dict representation of the instance.
+        """
+
+        my_dict = dict()
+        if type(attrs) is list and all(type(x) is str for x in attrs):
+            for x in attrs:
+                if x in self.__dict__:
+                    my_dict.update({x: self.__dict__[x]})
+            return my_dict
+        return self.__dict__.copy()
