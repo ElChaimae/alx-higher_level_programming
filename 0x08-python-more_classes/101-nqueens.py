@@ -1,6 +1,8 @@
 import sys
 
+
 def is_safe(board, row, col, n):
+
     # Check if there is a queen in the same column
     for i in range(row):
         if board[i][col] == 1:
@@ -18,7 +20,9 @@ def is_safe(board, row, col, n):
 
     return True
 
+
 def solve_nqueens(n):
+
     def solve(board, row):
         if row == n:
             solutions.append([[i, col] for i, col in enumerate(board)])
@@ -45,6 +49,7 @@ def solve_nqueens(n):
     for solution in solutions:
         print(solution)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
@@ -56,4 +61,3 @@ if __name__ == "__main__":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
-
