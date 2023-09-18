@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module Defines a Rectangle
+    This module Defines a Rectangle
 """
 
 from models.base import Base
@@ -8,23 +8,23 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-    It inherits from Base
+        It inherits from Base
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        It initializes attributes of the object
+            It initializes attributes of the object
         """
-        self._width = width
-        self._height = height
-        self._x = x
-        self._y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @width.setter
     def width(self, value):
         """
-        It sets width
+            It sets width
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -35,7 +35,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """
-        It sets height
+            It sets height
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -46,7 +46,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """
-        It sets x
+            It sets x
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -57,7 +57,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """
-        It sets y
+            It sets y
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -68,40 +68,40 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-        It returns width
+            It returns width
         """
         return self.__width
 
     @property
     def height(self):
         """
-        It returns height
+            It returns height
         """
         return self.__height
 
     @property
     def x(self):
         """
-        It returns x
+            It returns x
         """
         return self.__x
 
     @property
     def y(self):
         """
-        It returns y
+            It returns y
         """
         return self.__y
 
     def area(self):
         """
-        It calucalted the area
+            It calucalted the area
         """
         return self.__width * self.__height
 
     def display(self):
         """
-        It returns a rectangle using # symbol
+            It returns a rectangle using # symbol
         """
         if self.__height == 0 or self.__width == 0:
             return ""
