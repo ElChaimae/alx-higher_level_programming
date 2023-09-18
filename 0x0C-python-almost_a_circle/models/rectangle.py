@@ -58,7 +58,7 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        elif value < 0
+        elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
@@ -106,6 +106,6 @@ class Rectangle(Base):
         for i in range(self.__height):
             for j in range(self.__width):
                 rectangle += "#"
-            if i < self.__height - 1
+            if i < self.__height - 1:
                 rectangle += "\n"
         return rectangle
