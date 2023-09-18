@@ -15,10 +15,10 @@ class Rectangle(Base):
         """
         It initializes attributes of the object
         """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self._width = width
+        self._height = height
+        self._x = x
+        self._y = y
         super().__init__(id)
 
     @width.setter
