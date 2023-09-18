@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Define a Rectangle
+"""
 
 from models import Base
 
