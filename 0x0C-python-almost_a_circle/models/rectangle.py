@@ -29,7 +29,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """
-            It sets width
+        It sets width
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -40,14 +40,14 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-            It returns height
+        It returns height
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-            It sets height
+        It sets height
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -58,14 +58,14 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-            It returns x
+        It returns x
         """
         return self.__x
 
     @x.setter
     def x(self, value):
         """
-            It sets x
+        It sets x
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -76,14 +76,14 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-            It returns y
+        It returns y
         """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-            It sets y
+        It sets y
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -93,18 +93,18 @@ class Rectangle(Base):
 
     def area(self):
         """
-            It calucalted the area
+        It calucalted the area
         """
         return self.__width * self.__height
 
     def display(self):
         """
-            It displayss a rectangle using # symbol
+        It displayss a rectangle using # symbol
         """
         if self.__height == 0 or self.__width == 0:
             print("")
         for i in range(self.__height):
             for j in range(self.__width):
-                print("#", end = "")
+                print("#", end="")
             if i < self.__height - 1:
                 print()
