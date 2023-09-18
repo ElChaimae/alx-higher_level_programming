@@ -108,3 +108,9 @@ class Rectangle(Base):
                 print("#", end="")
             if i < self.__height:
                 print()
+
+    def __str__(self):
+        """
+        It overrides the __str__ method
+        """
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}\n"
