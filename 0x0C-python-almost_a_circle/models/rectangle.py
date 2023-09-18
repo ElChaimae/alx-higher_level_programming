@@ -99,14 +99,12 @@ class Rectangle(Base):
 
     def display(self):
         """
-            It returns a rectangle using # symbol
+            It displayss a rectangle using # symbol
         """
         if self.__height == 0 or self.__width == 0:
-            return ""
-        rectangle = ""
+            print("")
         for i in range(self.__height):
             for j in range(self.__width):
-                rectangle += "#"
+                print("#", end = "")
             if i < self.__height - 1:
-                rectangle += "\n"
-        return rectangle
+                print()
