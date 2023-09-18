@@ -113,4 +113,5 @@ class Rectangle(Base):
         """
         It overrides the __str__ method
         """
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}\n"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " \
+            f"{self.__width}/{self.__height}"
