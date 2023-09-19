@@ -5,6 +5,7 @@ Defines a Base Class
 
 import json
 import csv
+import os
 
 
 class Base:
@@ -73,12 +74,11 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         instances = []
-        try:
-            with open(filename, "r") as file:
-                data = file.read()
-                if data:
-                    json_list = json.loads(data)
-                    instances = [cls.create(**item) for item in json_list]
-        except FileNotFoundError:
-            pass
-        return instances
+        list_dictionaries = []
+        if os.path.exists(filename):
+            with open(filename, 'r') as myfile:
+                mystr = myfile.read()
+                list_dictionaries = cls.from_json_string(mystr)
+                for dictionary in list_dictionaries:
+                    list_of_instances.append(cls.create(**dictionary))
+        return list_of_instances
