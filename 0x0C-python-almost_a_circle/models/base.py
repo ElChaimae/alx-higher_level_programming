@@ -71,10 +71,14 @@ class Base:
         """
         It returns a list of instances
         """
-        filename = str(cls.__name__) + ".json"
+        filename = cls.__name__ + ".json"
+        instances = []
         try:
-            with open(filename, "r") as jsonfile:
-                list_dicts = Base.from_json_string(jsonfile.read())
-                return [cls.create(**d) for d in list_dicts]
-        except IOError:
-            return []
+            with open(filename, "r") as file:
+                data = file.read()
+                if data:
+                    json_list = json.loads(data)
+                    instances = [cls.create(**item) for item in json_list]
+        except FileNotFoundError:
+            pass
+        return instances
